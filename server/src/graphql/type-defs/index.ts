@@ -1,7 +1,7 @@
 import { mergeTypeDefs } from '@graphql-tools/merge'
 
-import accountTypeDefs from './account'
+import pokeDef from "./pokemon"
 
-export default mergeTypeDefs([
-  accountTypeDefs
-])
+export default mergeTypeDefs( [
+  pokeDef]
+)

@@ -1,15 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { ApolloProvider } from '@apollo/client/react'
-import client from './config/apollo-client'
-
-import App from './App'
+import ReactDOM from 'react-dom';
+import { ApolloProvider } from '@apollo/client/react';
+import client from './config/apollo-client';
+import Homepage from './pages/homepage/index';
+import { GlobalStyle } from './style-guide/GlobalStyle';
+import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+        <GlobalStyle />
+        <Homepage />
+    </ApolloProvider>,
+    document.getElementById('root')
+);

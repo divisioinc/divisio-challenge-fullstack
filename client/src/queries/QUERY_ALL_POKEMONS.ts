@@ -6,6 +6,14 @@ export const QUERY_ALL_POKEMONS = gql`
       id
       name
       image
+      types {
+        name
+        url
+      }
+      abilities {
+        name
+        url
+      }
     }
   }
 `

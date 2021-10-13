@@ -1,6 +1,5 @@
 import { getPokemons } from "../../services/servicesPokemon"
 
-
 export default {
   Query: {
     pokemons: (_, {offset, limit}) => {

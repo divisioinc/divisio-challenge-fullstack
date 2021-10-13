@@ -17,7 +17,8 @@ export const Homepage = () => {
     variables: {
       offset: 0,
       limit: 40
-    }
+    },
+    fetchPolicy: 'no-cache'
   })
 
   return (

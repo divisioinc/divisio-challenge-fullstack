@@ -26,6 +26,7 @@ export const PokedexCard = ({
             <PokedexCardContent
               pokemonImage={pokemon.image}
               pokemonName={pokemon.name}
+              pokemon={pokemon}
             />
             <PokedexCardFooter name={pokemon.name} types={pokemon.types} />
           </PokedexCardContainer>

@@ -1,3 +1,5 @@
+import { PokemonModal } from 'components/PokemonModal'
+import { useState } from 'react'
 import { PokedexCardContentProps } from 'types/interfaces'
 import {
   PokedexContentContainer,
@@ -7,12 +9,26 @@ import {
 
 export const PokedexCardContent = ({
   pokemonImage,
-  pokemonName
+  pokemonName,
+  pokemon
 }: PokedexCardContentProps) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleClick = () => {
+    return setIsOpen(!isOpen)
+  }
+
   return (
-    <PokedexContentContainer>
-      <PokedexContentScreen />
-      <PokedexContentImage src={pokemonImage} alt={pokemonName} />
-    </PokedexContentContainer>
+    <>
+      <PokemonModal
+        pokemon={pokemon}
+        isOpen={isOpen}
+        onRequestClose={handleClick}
+      />
+      <PokedexContentContainer onClick={handleClick}>
+        <PokedexContentScreen />
+        <PokedexContentImage src={pokemonImage} alt={pokemonName} />
+      </PokedexContentContainer>
+    </>
   )
 }

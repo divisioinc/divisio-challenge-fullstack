@@ -6,7 +6,7 @@ export interface Pokemon {
     name: string
     url: string
   }[]
-  abilities?: {
+  abilities: {
     name: string
     url: string
   }[]
@@ -22,6 +22,7 @@ export interface PokedexCardProps {
 export interface PokedexCardContentProps {
   pokemonImage: string
   pokemonName: string
+  pokemon: Pokemon
 }
 
 export interface PokedexCardFooterProps {

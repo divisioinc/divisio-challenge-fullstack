@@ -1,19 +1,10 @@
-import Modal from 'react-modal'
-
-interface Pokemon {
-  name: string
-  id: string
-  image: string
-  types?: {
-    name: string
-    url: string
-  }[]
-  abilities?: {
-    name: string
-    url: string
-  }[]
-}
-
+import { Pokemon } from 'types/interfaces'
+import {
+  Overlay,
+  ModalContainer,
+  ModalAbilitiesContent,
+  Abilities
+} from './styles'
 interface PokemonModalProps {
   pokemon: Pokemon
   isOpen: boolean
@@ -26,13 +17,20 @@ export const PokemonModal = ({
   pokemon
 }: PokemonModalProps) => {
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      overlayClassName="react-modal-overlay"
-      className="react-modal-content"
-    >
-      <h1>{pokemon.name}</h1>
-    </Modal>
+    <Overlay isOpen={isOpen} onClick={onRequestClose}>
+      <ModalContainer>
+        <h1>{pokemon.name}</h1>
+        <img src={pokemon.image} alt={pokemon.name} />
+        <ModalAbilitiesContent>
+          <h3>Abilities</h3>
+          <div>
+            <Abilities color={'red'}>{pokemon.abilities[0].name}</Abilities>
+            {Boolean(pokemon.abilities.length > 1) && (
+              <Abilities color={'green'}>{pokemon.abilities[1].name}</Abilities>
+            )}
+          </div>
+        </ModalAbilitiesContent>
+      </ModalContainer>
+    </Overlay>
   )
 }

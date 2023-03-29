@@ -61,3 +61,11 @@ Consume the query using Apollo client. Preference for use of apollo-hooks.
 ## Bonus point (not required)
 - Explore more [PokeAPI](https://pokeapi.co/) for, maybe, create a new screen to display the details of each pokemon by clicking on the list. It is up to you.
 - Write tests (back and/or front)
+
+
+## How to run the project:
+- Clone this repository: ```git clone https://github.com/JulianoVendramini/divisio-challenge-fullstack.git```
+- Open the project
+- You have to install the dependencies to client and server folders, just run ````yarn```
+- The last step is run ```yarn dev``` in both folders
+- Open ```http://localhost:3000/``` in your browser
